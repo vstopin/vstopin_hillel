@@ -17,7 +17,7 @@ var arr = [
     },
 ];
 
-const emailValidator = /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*@(?:gmail\.com|yahoo\.com)$/;
+const emailValidator = /^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)?@(?:gmail\.com|yahoo\.com)$/;
 
 const validEmails = arr.filter(user => emailValidator.test(user.email));
 
@@ -27,12 +27,14 @@ console.log(validEmails);
 
 
 
+
 //ДЗ 10.2 Без А
 
 const regex = /^[^aA]{6,}$/;
 
-const words = ["Wonderful", "Joyful", "Happiness", "Time", "Task", "Apple"];
+const sentence = "Wonderful Joyful Happiness Time Task Apple";
 
+const words = sentence.split(' ');
 const wordsWithoutA = words.filter(word => regex.test(word));
 
 console.log(wordsWithoutA);
